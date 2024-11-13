@@ -26,7 +26,7 @@ dev-deps: ## Install developer dependencies
 
 deps: ## Install dependencies.
 	@go mod download
-	@go mod verify
+	mv /go/src/github.com/supabase/auth/patches/validate.go /go/pkg/mod/github.com/russellhaering/goxmldsig@v1.3.0/validate.go
 
 migrate_dev: ## Run database migrations for development.
 	hack/migrate.sh postgres
